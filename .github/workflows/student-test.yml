@@ -1,0 +1,38 @@
+name: test
+
+on: [pull_request]
+jobs:
+  middleCheck:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'middle')
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
+      - name: Run Test
+        id: step1
+        run: bun test test/middle.test.ts
+      - name: comment
+        if: always()
+        run: gh pr comment ${{github.event.number}} --body "${{steps.step1.outputs.jsOutput}} 詳細はこちら ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  finalCheck:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'final')
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
+      - name: Run Test
+        id: step1
+        run: bun test test/final.test.ts
+      - name: comment
+        run: gh pr comment ${{github.event.number}} --body "${{steps.step1.outputs.jsOutput}}"
+        env:
+          GH_TOKEN: ${{ github.token }}
