@@ -33,7 +33,7 @@ export const questions = [
       },
       {
         arg: { action: "勉強" },
-        result: "名無しさんが洗濯しました",
+        result: "名無しさんが勉強しました",
         point: 5,
         hints: [
           "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
