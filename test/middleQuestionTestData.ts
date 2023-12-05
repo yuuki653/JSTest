@@ -26,7 +26,7 @@ export const questions = [
       {
         arg: { userName: "田中", action: "洗濯" },
         result: "田中さんが洗濯しました",
-        point: 5,
+        point: 1,
         hints: [
           "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
         ],
@@ -34,7 +34,16 @@ export const questions = [
       {
         arg: { action: "勉強" },
         result: "名無しさんが勉強しました",
-        point: 5,
+        point: 1,
+        hints: [
+          "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
+          "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
+        ],
+      },
+      {
+        arg: { userName: "", action: "勉強" },
+        result: "名無しさんが勉強しました",
+        point: 2,
         hints: [
           "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
@@ -43,7 +52,16 @@ export const questions = [
       {
         arg: { userName: "斎藤" },
         result: "斎藤さんは何もしませんでした",
-        point: 5,
+        point: 2,
+        hints: [
+          "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
+          "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
+        ],
+      },
+      {
+        arg: { userName: "斎藤", action: "" },
+        result: "斎藤さんは何もしませんでした",
+        point: 2,
         hints: [
           "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
@@ -52,7 +70,7 @@ export const questions = [
       {
         arg: {},
         result: "名無しさんは何もしませんでした",
-        point: 5,
+        point: 2,
         hints: [
           "- [ ] [文字列結合](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e6%96%87%e5%ad%97%e5%88%97%e7%b5%90%e5%90%88)",
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
@@ -69,7 +87,7 @@ export const questions = [
       {
         arg: { price: 1500, isTakeOut: false },
         result: 1650,
-        point: 6,
+        point: 3,
         hints: [
           "- [ ] [数値計算](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Math)",
         ],
@@ -77,7 +95,7 @@ export const questions = [
       {
         arg: { price: 2400, isTakeOut: true },
         result: 2592,
-        point: 7,
+        point: 3,
         hints: [
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
           "- [ ] [数値計算](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Math)",
@@ -86,7 +104,7 @@ export const questions = [
       {
         arg: { price: 298, isTakeOut: false },
         result: 327,
-        point: 7,
+        point: 4,
         hints: [
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
           "- [ ] [数値計算](https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/Math)",
@@ -103,7 +121,7 @@ export const questions = [
       {
         arg: [1, 2, 3, 4, 5],
         result: { sum: 15, average: 3 },
-        point: 20,
+        point: 15,
         hints: [
           "- [ ] [四捨五入](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/round)",
           "- [ ] [ループ](https://cvo2.onrender.com/lectures/js-easy_js-basic#step4%20%e3%83%ab%e3%83%bc%e3%83%97)",
@@ -124,7 +142,7 @@ export const questions = [
           "- [ ] [配列の操作](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e9%85%8d%e5%88%97%e3%81%ae%e6%93%8d%e4%bd%9c)",
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
         ],
-        point: 10,
+        point: 7,
       },
       {
         arg: {
@@ -136,7 +154,7 @@ export const questions = [
           "- [ ] [配列の操作](https://cvo2.onrender.com/lectures/js-easy_js-basic#%e9%85%8d%e5%88%97%e3%81%ae%e6%93%8d%e4%bd%9c)",
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
         ],
-        point: 10,
+        point: 8,
       },
     ],
     title: "- 問題4:配列内の特定の要素をトグルする関数を作ろう",
@@ -155,7 +173,7 @@ export const questions = [
         hints: [
           "- [ ] [要素のテキストの編集,取得](https://cvo2.onrender.com/lectures/js-easy_dom#%e8%a6%81%e7%b4%a0%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e3%80%81%e6%93%8d%e4%bd%9c%e3%81%99%e3%82%8b)",
         ],
-        point: 10,
+        point: 7,
         others: { body: "<div id='test'></div>" },
       },
       {
@@ -172,7 +190,7 @@ export const questions = [
           "- [ ] [要素の作成](https://cvo2.onrender.com/lectures/js-easy_dom#%e5%ad%90%e8%a6%81%e7%b4%a0%e3%82%92%e8%bf%bd%e5%8a%a0%e3%83%bb%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b)",
           "- [ ] [条件分岐](https://cvo2.onrender.com/lectures/js-easy_js-basic#step3%e3%80%80%e6%9d%a1%e4%bb%b6%e5%88%86%e5%b2%90)",
         ],
-        point: 10,
+        point: 8,
         result: "こんばんは",
       },
     ],
@@ -183,7 +201,7 @@ export const questions = [
     func: TestComponent1,
     testCases: [
       {
-        point: 10,
+        point: 20,
         arg: { userName: "田中" },
         hints: [
           "- [ ] [state](https://cvo2.onrender.com/lectures/React-Next-basic_lecture-01#state)",
@@ -198,7 +216,7 @@ export const questions = [
     func: TestComponent2,
     testCases: [
       {
-        point: 10,
+        point: 15,
         arg: {
           userNames: ["田中", "本田", "佐藤", "森", "林", "山田", "自分"],
         },
