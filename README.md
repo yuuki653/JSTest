@@ -1,15 +1,16 @@
-# jstest
+# テストの受け方
 
-To install dependencies:
+## fork
 
-```bash
-bun install
-```
+## branch変更
 
-To run:
+## 環境のセットアップ
 
-```bash
-bun run index.ts
-```
+### インストール
 
-This project was created using `bun init` in bun v1.0.6. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## テスト開始 
+
+## テスト結果確認方法
+
+### githubにアップ
+### PR
