@@ -112,6 +112,7 @@ question1.js ~ question7.jsxファイルを開くと問題の内容や引数の�
 
 
 押すと画面が切り替わり数十秒するとテスト結果が表示されます。
+テスト結果がでたら講師にそのリポジトリのURLを送ってください。
 
 ![スクリーンショット 2023-12-08 9 44 08](https://github.com/codevillagejp/JSTest/assets/70260848/b6a30403-9bfc-445c-b1a0-4b9c4fac632e)
 
