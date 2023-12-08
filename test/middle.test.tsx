@@ -15,10 +15,12 @@ describe("中間テスト", () => {
       "jsOutput",
       sumPoint === 100
         ? `# ⭕ 合格
-あなたの点数は100点中${sumPoint}点です。次のカリキュラムにすすみましょう！`
+あなたの点数は100点中${sumPoint}点です。次のカリキュラムにすすみましょう！
+[解答](https://github.com/codevillagejp/examinationAnswer/tree/main/testPaper/middle)`
         : sumPoint > 70
           ? `# ⭕ 合格
-あなたの点数は100点中${sumPoint}点です。間違った部分の復習をして、次のカリキュラムに進みましょう。
+あなたの点数は100点中${sumPoint}点です。間違った部分の復習をして、次のカリキュラムに進みましょう
+[解答](https://github.com/codevillagejp/examinationAnswer/tree/main/testPaper/middle)。
 
 ### 間違った問題
 ${missTitles.join("\n")}
@@ -35,7 +37,7 @@ ${missTitles.join("\n")}
 
 ### 復習ポイント
 ${Array.from(new Set(missMessages)).join("\n")}
-`,
+`
     );
   });
   questions.forEach((question) => {
@@ -45,7 +47,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(
-              arg,
+              arg
             )}) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg)).toBe(result);
@@ -60,7 +62,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 2:
@@ -68,7 +70,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(
-              arg,
+              arg
             )}) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg.price, arg.isTakeOut)).toBe(result);
@@ -83,7 +85,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 3:
@@ -91,7 +93,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}([${JSON.stringify(
-              arg,
+              arg
             )}]) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg)).toEqual(result);
@@ -106,7 +108,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 4:
@@ -114,7 +116,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
           question.title,
           ({ arg, result, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(
-              arg,
+              arg
             )}) returns ${JSON.stringify(result)}`, () => {
               try {
                 expect(question.func(arg.array, arg.element)).toEqual(result);
@@ -129,7 +131,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 5:
@@ -153,7 +155,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 6:
@@ -188,7 +190,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       case 7:
@@ -229,7 +231,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 throw er;
               }
             });
-          },
+          }
         );
         break;
       default:
