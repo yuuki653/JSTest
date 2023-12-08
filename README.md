@@ -70,7 +70,10 @@ npm install
 実際にテストを受けてみましょう。
 
 ## テスト開始
-cloneしたリポジトリ(JSTest)をお好きなエディターで開いてJSTest/testPaper/middleディレクトリにあるquestion1.jsから1uestion7.jsxまでが中間テストで使用するファイルです。
+cloneしたリポジトリ(JSTest)をお好きなエディターで開いてください。
+
+JSTest/testPaper/middleディレクトリにあるquestion1.jsから1uestion7.jsxまでが中間テストで使用するファイルです。
+確認してみましょう。
 
 question1.js ~ question7.jsxファイルを開くと問題の内容や引数の例、返り値の例が記述されているので読んで何をするのか確認しましょう。
 
