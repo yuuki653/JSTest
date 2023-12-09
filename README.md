@@ -88,7 +88,10 @@ question1.js ~ question7.jsxファイルを開くと問題の内容や引数の�
 まず、自分の書いた内容をgithubにpushしてください。(コミットメッセージは指定はありません。)
 pushするコマンドは、
 ```
+//中間テストの場合
 git push origin middle/自分のgithubのユーザー名
+//卒業テストの場合
+git push origin final/自分のgithubのユーザー名
 ```
 
 次に自分のgithubのJSTestリポジトリをブラウザで開きましょう。
