@@ -86,6 +86,10 @@ question1.js ~ question7.jsxファイルを開くと問題の内容や引数の�
 ## テスト結果確認方法
 
 まず、自分の書いた内容をgithubにpushしてください。(コミットメッセージは指定はありません。)
+pushするコマンドは、
+```
+git push origin middle/自分のgithubのユーザー名
+```
 
 次に自分のgithubのJSTestリポジトリをブラウザで開きましょう。
 
