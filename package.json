@@ -9,6 +9,7 @@
     "@happy-dom/global-registrator": "^12.10.3",
     "@testing-library/react": "^14.1.2",
     "bun-types": "latest",
+    "eslint": "^8.56.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
@@ -20,6 +21,7 @@
     "typescript": "^5.0.0"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown",
+    "testPaper/**/*": "eslint testPaper/middle"
   }
 }
