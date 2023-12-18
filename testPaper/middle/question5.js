@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /// <reference lib="dom" />
 
 // - 問題5:要素のテキストを変更する関数を作ろう
