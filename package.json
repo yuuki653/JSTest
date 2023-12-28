@@ -8,8 +8,11 @@
   "devDependencies": {
     "@happy-dom/global-registrator": "^12.10.3",
     "@testing-library/react": "^14.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
     "bun-types": "latest",
     "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
