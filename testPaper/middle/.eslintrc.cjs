@@ -2,8 +2,9 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: "eslint:recommended",
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   overrides: [
     {
       env: {
@@ -15,9 +16,14 @@ module.exports = {
       },
     },
   ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  rules: {},
+  plugins: ["@typescript-eslint", "react"],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off",
+  },
 };
