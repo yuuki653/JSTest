@@ -199,26 +199,32 @@ ${Array.from(new Set(missMessages)).join("\n")}
           ({ arg, point, hints }) => {
             test(`${question.func.name}(${JSON.stringify(arg)})`, () => {
               try {
+                //ulタグがあるか
                 const Component = question.func;
                 render(<Component userNames={arg.userNames} />);
-                screen.getByRole("list");
-                //全員分表示できているか(自分を除く)
-                arg.userNames.forEach(async (userName) => {
+                //ulがあるか
+                expect(screen.queryByRole("list")?.tagName).toBe("UL");
+                //自分というテキストが見つからないか
+                arg.userNames.forEach((userName) => {
                   if (userName === "自分") {
-                    expect(await screen.findByText(userName)).toBeUndefined();
+                    expect(screen.queryByText("自分")).toBeNull();
                   } else {
-                    expect(screen.getByText(userName)).not.toBeUndefined();
+                    expect(screen.queryByText(userName)).not.toBeNull();
                   }
                 });
-                //それぞれcheckboxをクリックしてline-throughがつくか
-                const lis = screen.getAllByRole("listitem");
-                lis.forEach((li) => {
-                  const span = li.getElementsByTagName("span")[0];
-                  const checkbox = li.getElementsByTagName("input")[0];
-                  expect(span.style.textDecoration).not.toBe("line-through");
-                  fireEvent.click(checkbox);
-                  expect(span.style.textDecoration).toBe("line-through");
+                const lists = screen.queryAllByRole("listitem");
+                lists.forEach((li) => {
+                  const checkbox = li.querySelector("input");
+                  const span = li.querySelector("span");
+                  if (checkbox && span) {
+                    expect(span.style.textDecoration).not.toBe("line-through");
+                    fireEvent.click(checkbox);
+                    expect(span.style.textDecoration).toBe("line-through");
+                  } else {
+                    throw "cannot use TestComponent1";
+                  }
                 });
+                screen.debug();
 
                 sumPoint += point;
               } catch (er) {
