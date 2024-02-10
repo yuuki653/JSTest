@@ -13,7 +13,8 @@ jobs:
         run: bun install
       - name: Run Test
         id: step1
-        run: bun test test/middle.test.ts
+        run: bun test test/middle.test.tsx
+        timeout-minutes: 5
       - name: comment
         if: always()
         run: gh pr comment ${{github.event.number}} --body "${{steps.step1.outputs.jsOutput}} 詳細はこちら ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
