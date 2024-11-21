@@ -154,6 +154,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 });
                 throw er;
               }
+              document.body.innerHTML = "";
             });
           },
         );
@@ -166,17 +167,22 @@ ${Array.from(new Set(missMessages)).join("\n")}
             test(`${question.func.name}(${JSON.stringify(arg)})`, () => {
               try {
                 const Component = question.func;
-                render(<Component userName={arg.userName} />);
-                const checkbox = screen.getByRole("checkbox");
+                const { getByRole } = render(
+                  <Component userName={arg.userName} />,
+                );
+                const button = getByRole("button");
                 const span = screen.getByText("田中");
                 // 1 spanタグで作っているか
                 expect(span.tagName).toBe("SPAN");
                 // 3 クリックする前にspanタグにスタイルがついていないか
                 expect(span.style.textDecoration).not.toBe("line-through");
                 // 3 クリックした時にspanタグにスタイルがついているか
-                fireEvent.click(checkbox);
+                expect(button.textContent).toBe("完了");
+                fireEvent.click(button);
                 expect(span.style.textDecoration).toBe("line-through");
-                fireEvent.click(checkbox);
+                expect(button.textContent).toBe("完了取消");
+                fireEvent.click(button);
+                expect(button.textContent).toBe("完了");
                 expect(span.style.textDecoration).not.toBe("line-through");
 
                 sumPoint += point;
@@ -189,6 +195,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 });
                 throw er;
               }
+              document.body.innerHTML = "";
             });
           },
         );
@@ -214,11 +221,13 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 });
                 const lists = screen.queryAllByRole("listitem");
                 lists.forEach((li) => {
-                  const checkbox = li.querySelector("input");
+                  const button = li.querySelector("button");
                   const span = li.querySelector("span");
-                  if (checkbox && span) {
+                  if (button && span) {
                     expect(span.style.textDecoration).not.toBe("line-through");
-                    fireEvent.click(checkbox);
+                    expect(button.textContent).toBe("完了");
+                    fireEvent.click(button);
+                    expect(button.textContent).toBe("完了取消");
                     expect(span.style.textDecoration).toBe("line-through");
                   } else {
                     throw "cannot use TestComponent1";
@@ -236,6 +245,7 @@ ${Array.from(new Set(missMessages)).join("\n")}
                 });
                 throw er;
               }
+              document.body.innerHTML = "";
             });
           },
         );
