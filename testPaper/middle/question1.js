@@ -24,4 +24,5 @@
 
 export const createUserActionString = (object) => {
   //ここに記述
+  
 };
