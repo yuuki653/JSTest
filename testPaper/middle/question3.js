@@ -14,5 +14,12 @@
  *  @return {{sum:number,average:number}}
  */
 export const sumAndAverage = (array) => {
-  //ここに記述
+  let obj = {
+    sum: array.reduce((sum, element) => sum + element),
+    average: Math.round(
+      array.reduce((sum, element) => sum + element) / array.length,
+    ),
+  };
+
+  return obj;
 };
