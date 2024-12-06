@@ -17,22 +17,23 @@
 import { useState } from "react";
 
 const TestComponent1 = ({ userName }) => {
-  const [isFinished, setIsFinishes] = useState("完了");
-
-  const handleClick = () => {
-    setIsFinishes((text) => (text === "完了" ? "完了取消" : "完了"));
-  };
+  const [isFinished, setIsFinishes] = useState(false);
 
   return (
     <li>
+      <input
+        type="checkbox"
+        onChange={() => {
+          setIsFinishes(!isFinished);
+        }}
+      />
       <span
         style={{
-          textDecoration: isFinished === "完了" ? "none" : "line-through",
+          textDecoration: isFinished ? "line-through" : "none",
         }}
       >
         {userName}
       </span>
-      <button onClick={handleClick}>{isFinished}</button>
     </li>
   );
 };
