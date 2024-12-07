@@ -13,13 +13,14 @@
 
 export const changeElementText = (elementId, text) => {
   const element = document.getElementById(elementId);
-  if (element) {
-    element.textContent = text;
-  } else {
+  if (!element) {
     const newElement = document.createElement("div");
-    document.body.appendChild(newElement);
     newElement.id = elementId;
+    document.body.appendChild(newElement);
+
     const el = document.getElementById(elementId);
     el.textContent = text;
+  } else {
+    element.textContent = text;
   }
 };

@@ -23,8 +23,7 @@
 export const priceCalculator = (price, isTakeOut) => {
   if (isTakeOut) {
     return Math.floor(price * 1.08);
-  }
-  if (!isTakeOut) {
+  } else {
     return Math.floor(price * 1.1);
   }
 };
