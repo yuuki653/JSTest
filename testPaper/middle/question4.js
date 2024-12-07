@@ -17,5 +17,11 @@
  *  @return {(string|number)[]}
  */
 export const toggleArrayElement = (array, ele) => {
-  //ここに記述
+  let foundEle = array.find((num) => num === ele);
+
+  if (foundEle) {
+    return array.filter((num) => num !== ele);
+  } else {
+    return array.concat(ele);
+  }
 };
