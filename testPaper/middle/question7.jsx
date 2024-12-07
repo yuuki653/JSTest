@@ -18,9 +18,9 @@ import TestComponent1 from "./question6";
 const TestComponent2 = ({ userNames }) => {
   return (
     <ul>
-      {userNames.map((users, index) => {
-        if (users.Name !== "自分") {
-          return <TestComponent1 userName={users.Name} key={index} />;
+      {userNames.map((userName, index) => {
+        if (userName !== "自分") {
+          return <TestComponent1 userName={userName} key={index} />;
         }
       })}
     </ul>
